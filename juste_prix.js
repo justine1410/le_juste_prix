@@ -65,6 +65,7 @@ formulaire.addEventListener('submit',(e)=>{
     
     if(isNaN(input.value) || input.value == ""){
         input.style.borderColor="red";
+        error.style.opacity="1"
     }else{
         coups++;
         input.style.borderColor="silver";
