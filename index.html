@@ -5,45 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel ="shortcut icon" href="./img/detective-gc066a3d34_1280.png" >
 
-    <!-- CSS only -->
-    <title>Le juste prix</title>
+    
+    <title>Le juste nombre</title>
 </head>
 <body>
     <div class="container">
   
-        <div class="row justify-content-center mt-5">
-          <header>
-            Le Juste Prix
-          </header>
-        </div>
+          <h1>
+            Le Juste Nombre
+          </h1>
         
         <!-- Formulaire -->
-        <div class="row justify-content-center mt-5 mb-4">   
-          <div class="col-lg-8">   
-            <div class="bg-light p-5 shadow">
-              
               <form id="formulaire">
-                <div class="row">
-                  <div class="col">
-                    <input id="prix" class="form-control" placeholder="Devinez le prix ! (entre 0 et 1 000)" />
+                  <div class="form_input">
+                    <input id="prix" class="form-control" placeholder="Devinez un nombre ! (entre 0 et 50)" />
+                    <button type="submit" class="btn btn-primary">Deviner</button>
                   </div>
-                  <button type="submit" class="btn btn-primary">Deviner</button>
-                </div>
-                <small class="text-danger">Vous devez rentrer un nombre.</small>
+                    <p class="erreur">Vous devez rentrer un nombre.</p>
               </form>
               
             </div>  
           </div>
-        </div>
+    </div>
         
         <!-- Instructions -->
-        <div class="row justify-content-center">
-          <div id="instructions" class="col-lg-8"></div>
-        </div>
+          <div id="instructions" ></div>
         
-      </div>
+
 
     
     <script src="./juste_prix.js"></script>

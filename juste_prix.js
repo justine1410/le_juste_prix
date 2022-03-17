@@ -1,15 +1,22 @@
 // Etape 1 - Sélectionner nos éléments
 let input = document.querySelector('#prix');
-let error = document.querySelector('small');
+let error = document.querySelector('.erreur');
 let formulaire = document.querySelector('#formulaire');
 
 // Etape 2 - Cacher l'erreur
 error.style.opacity="0";
 
 // Etape 3 - Générer un nombre aléatoire
-let nombresAleatoire =  Math.floor(Math.random() * 1001 );
+let nombresAleatoire =  Math.floor(Math.random() * 51 );
 let coups = 0
 let nombreChoisi;
+function recommencer(){
+     let reponse = confirm('voulez-vous recommencer ?')
+    if(reponse){
+       location.reload()
+    }
+}
+
 
 console.log(nombresAleatoire);
 // Etape 4 - Créer la fonction vérifier
@@ -19,20 +26,21 @@ function verifier(nombre){
 
     if(nombre < nombresAleatoire){
         // Ajouter un contenu "#1(4) C'est plus !""
-        instruction.innerHTML = "coups " + coups +" : " +nombreChoisi +" € C'est plus !"
+        instruction.innerHTML = "coups " + coups +" : " +nombreChoisi +" C'est plus !"
         
         // Ajouter les classes instruction et plus
         instruction.className = 'instruction plus'
 
     }else if (nombre > nombresAleatoire){
-        instruction.innerHTML = "coups num " + coups +" : " + nombreChoisi + " € C'est moins !"
+        instruction.innerHTML = "coups " + coups +" : " + nombreChoisi + " C'est moins !"
 
         instruction.className = 'instruction moins'
 
     }else{
-        instruction.innerHTML = "coups num " + coups +" : " + nombreChoisi + " € Félicitation vous avez trouvé le juste prix"
-
+        instruction.innerHTML = "coups " + coups +" : " + nombreChoisi + " Félicitation vous avez trouvé le juste nombre"
         instruction.className = 'instruction fini'
+        input.disabled = true
+         setTimeout(recommencer,500);
 
     }
     let instructions = document.querySelector("#instructions")
